@@ -1,0 +1,155 @@
+@import "partials/params";
+@import "partials/mixins";
+
+$color: $buy-border-color;
+
+.buy {
+	background-color: #fff;
+	&__content{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 60px;
+	}
+
+	&__title{
+		font-weight: bold;
+		font-size: 25px;
+		margin-bottom: 25px;
+		opacity: .8;
+	}
+
+	&__subtitle{
+		opacity: .8;
+		margin-bottom: 50px;
+		font-weight: normal;
+	}
+
+	&__input-wrapper{
+		display: flex;
+		width: 1000px;
+		margin: 0 auto 50px;
+		padding: 5px;
+		border: 1px solid $buy-border-color;
+	}
+
+	&___www{
+		justify-content: center;
+	}
+
+	&__help{
+		display: flex;
+		align-items: center;
+		width: 10%;
+		color: $color;
+	}
+
+
+	&__input-block{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 80%;
+		border-right:  1px solid $buy-border-color;
+		border-left:  1px solid $buy-border-color;
+	}
+
+	&__input{
+		width: 100%;
+		border: none;
+		outline: none;
+		padding: 10px;
+	}
+
+	&__domain{
+		margin-right: 60px;
+		color: $color;
+	}
+
+	&__select{
+		position: relative;
+		justify-content: flex-end;
+		cursor: pointer;
+
+		&:hover{
+
+			.select__dropdown{
+				opacity: 1;
+				z-index: 100;
+			}
+
+		}
+
+		& .select__dropdown{
+			@include clear-list;
+			position: absolute;
+			right: -6px;
+			top: 41px;
+			width: 200px;
+			height: 100px;
+			background-color: #fff;
+			opacity: 0;
+			z-index: -100;
+			transition: .5s all ;
+			padding: 0;
+		}
+
+		& .select__item{
+			text-transform: uppercase;
+			padding: 5px 15px;
+			border: 1px solid $buy-border-color;
+			border-top: none;
+		}
+	}
+
+	&__icon{
+		margin-right: 20px;
+	}
+
+	&__table{
+		width: 800px;
+		
+		& .table__row{
+			display: flex;
+		}
+
+		& .table__cell	{
+			position: relative;
+			@include flex-center(row)
+			width: 25%;
+			padding: 30px 50px;
+			font-size: 13px;
+			color: #D9D9D9;
+
+			&:after {
+				position: absolute;
+				display: block;
+				content: '';
+				right: -5px;
+				bottom: -5px;
+				height: 10px;
+				width: 10px;
+				background-color: #FFF;
+				z-index: 100;
+			}
+
+			&--top{
+				border-bottom: 1px solid $buy-border-color;
+				border-right: 1px solid $buy-border-color;
+			}
+
+			&--bottom{
+				border-right: 1px solid $buy-border-color;
+			}
+
+			&--nrb{
+				border-right: none;
+			}
+		}
+
+	}
+
+
+
+
+}
